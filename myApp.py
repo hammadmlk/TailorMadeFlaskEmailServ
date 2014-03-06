@@ -312,8 +312,8 @@ def summary():
 def sql():
     mailbox_name = str(request.cookies.get('email'))
     
-    emails = Email.query.filter_by(mailbox=mailbox_name)#.all()
-    emailaddrs = EmailAddr.query.filter_by(mailbox=mailbox_name)#.all()
+    #emails = Email.query.filter_by(mailbox=mailbox_name)#.all()
+    #emailaddrs = EmailAddr.query.filter_by(mailbox=mailbox_name)#.all()
     
     sentEmails = db.session.query(Email, EmailAddr).filter(Email.msgid==EmailAddr.msgid).\
                          filter(EmailAddr.type=='from').filter(EmailAddr.emailaddress==mailbox_name)#.all()
