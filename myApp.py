@@ -312,12 +312,20 @@ def summary():
 def sql():
     mailbox_name = str(request.cookies.get('email'))
     
-    emails = Email.query.filter_by(mailbox=mailbox_name).all()
-    emailaddrs = EmailAddr.query.filter_by(mailbox=mailbox_name).all()
+    emails = Email.query.filter_by(mailbox=mailbox_name)#.all()
+    emailaddrs = EmailAddr.query.filter_by(mailbox=mailbox_name)#.all()
     
-    #print emails
+    sentEmails = db.session.query(Email, EmailAddr).filter(Email.msgid==EmailAddr.msgid).\
+                         filter(EmailAddr.type=='from').filter(EmailAddr.emailaddress==mailbox_name)#.all()
     
-    return '<pre>'+str(emails)+'</pre>'+'<pre>'+str(emailaddrs)+'</pre>'
+    receivedEmails = db.session.query(Email, EmailAddr).filter(Email.msgid==EmailAddr.msgid).\
+                         filter(EmailAddr.type=='to').filter(EmailAddr.emailaddress==mailbox_name)#.all()
+    
+    return '<pre>'+str("\n\n==== SENT EMAILS "+str(sentEmails.count())+" : ===== \n\n")+str(sentEmails.all())+'</pre>'+\
+            '<pre>'+str("\n\n==== RECEIVED EMAILS "+str(receivedEmails.count())+" : ===== \n\n")+str(receivedEmails.all())+'</pre>'
+    
+    
+    #return '<pre>'+str(emails)+'</pre>'+'<pre>'+str(emailaddrs)+'</pre>'
 
 @app.route('/imap', methods=['GET'])
 def imapPage():
@@ -328,37 +336,31 @@ def imapPage():
     
     email = request.cookies.get('email')
     accesskey = request.cookies.get('ak')
-    stri = "<pre>"
+    
     if email != "" and accesskey != "":
-        stri+='\n'+"************"
-        stri+='\n'+"************ trying" + " " + request.cookies.get('email') +" "+ request.cookies.get('ak')
-        
+                
         server = IMAPClient('imap.gmail.com', use_uid=True, ssl=True)
-        #print server
+        
         server.oauth2_login(email, accesskey)
         
         #PRINT FOLDERS
         #folders = server.list_folders()
-        #for folder in folders:
-        #    print folder
+        #for folderx in folders:
+        #    print folderx
+        
         
         select_info = server.select_folder('[Gmail]/'+folder, readonly=True) 
         #print select_info
         
-        stri+='\n'+('%d messages in INBOX' % select_info['EXISTS'])
+        #messages = server.search(['SINCE 05-Feb-2014 NOT FROM \"facebook\"'])
+        messages = server.search(['SINCE 06-Feb-2014'])
         
-        messages = server.search(['SINCE 05-Feb-2014 NOT FROM \"facebook\"'])
-        stri+='\n'+("%d messages since 05 Feb" % len(messages))
-
         #print "-"
         #print messages
         #print "-"
                     
-        stri+='\n'+("Messages:")
-        
         response = server.fetch(messages, ['X-GM-MSGID', 'X-GM-THRID', 'FLAGS', 'INTERNALDATE', 'ENVELOPE'])
         for msgid, data in response.iteritems():
-            #stri+='\n' + ('   ID %d:   X-GM-MSGID: %d,   X-GM-THRID: %d,   Flags:,   InternalDate:,   Envelope:' % (  msgid, data['X-GM-MSGID'], data['X-GM-THRID']))
             
             #print "==========="
             #print data['FLAGS']
@@ -415,7 +417,7 @@ def imapPage():
             
         db.session.commit()
     
-    #return stri + "</pre>"
+    
     if (folder=="All Mail"):
         return redirect('/imap?folder=Trash')
     if (folder=="Trash"):
