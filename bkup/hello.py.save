@@ -1,0 +1,7 @@
+from tailormade import app
+
+@app.route('/tailormade/tt')
+def hello_world():
+    return 'Hello Worl
+
+

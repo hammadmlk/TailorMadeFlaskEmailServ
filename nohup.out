@@ -1,0 +1,909 @@
+ * Running on http://0.0.0.0:5000/
+ * Restarting with reloader
+128.84.127.215 - - [16/Dec/2013 23:33:14] "GET / HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/hammad/email_app/www/myApp.py", line 160, in index
+    return render_template('index.html', permissionURL=oauthAPI.permissionURL())
+NameError: global name 'oauthAPI' is not defined
+128.84.127.215 - - [16/Dec/2013 23:33:14] "GET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+128.84.127.215 - - [16/Dec/2013 23:33:14] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+128.84.127.215 - - [16/Dec/2013 23:33:14] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+128.84.127.215 - - [16/Dec/2013 23:33:15] "GET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+128.84.127.215 - - [16/Dec/2013 23:33:15] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+128.84.127.215 - - [16/Dec/2013 23:33:15] "GET /?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+128.84.127.215 - - [16/Dec/2013 23:33:19] "GET /login HTTP/1.1" 302 -
+128.84.127.215 - - [16/Dec/2013 23:33:24] "GET /oauth2callback?code=4/6PDl81NkooKnzlTwka2XX57cdeme.wlXu-jaD9_kRaDn_6y0ZQNgINIf7hQI HTTP/1.1" 302 -
+128.84.127.215 - - [16/Dec/2013 23:33:35] "GET /imap HTTP/1.1" 302 -
+128.84.127.215 - - [16/Dec/2013 23:33:39] "GET /imap?folder=Trash HTTP/1.1" 302 -
+128.84.127.215 - - [16/Dec/2013 23:33:39] "GET /summary HTTP/1.1" 200 -
+128.84.127.215 - - [16/Dec/2013 23:33:45] "GET /summary HTTP/1.1" 200 -
+128.84.127.215 - - [16/Dec/2013 23:33:48] "GET /sql HTTP/1.1" 200 -
+128.84.127.215 - - [16/Dec/2013 23:34:07] "GET /login HTTP/1.1" 302 -
+128.84.127.215 - - [16/Dec/2013 23:34:11] "GET /oauth2callback?code=4/bKA70yBk7cs0ZJ7lg81xlfq1SVe-.ErETe6G2WNoWaDn_6y0ZQNh8poj7hQI HTTP/1.1" 302 -
+128.84.127.215 - - [16/Dec/2013 23:34:14] "GET /imap HTTP/1.1" 302 -
+128.84.127.215 - - [16/Dec/2013 23:34:20] "GET /imap?folder=Trash HTTP/1.1" 302 -
+128.84.127.215 - - [16/Dec/2013 23:34:20] "GET /summary HTTP/1.1" 200 -
+75.114.181.162 - - [19/Dec/2013 05:20:40] "GET / HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/hammad/email_app/www/myApp.py", line 160, in index
+    return render_template('index.html', permissionURL=oauthAPI.permissionURL())
+NameError: global name 'oauthAPI' is not defined
+75.114.181.162 - - [19/Dec/2013 05:20:40] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+75.114.181.162 - - [19/Dec/2013 05:20:41] "GET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+75.114.181.162 - - [19/Dec/2013 05:20:41] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+75.114.181.162 - - [19/Dec/2013 05:20:43] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+75.114.181.162 - - [19/Dec/2013 05:20:43] "GET /?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+75.114.181.162 - - [19/Dec/2013 05:20:43] "GET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+75.114.181.162 - - [19/Dec/2013 05:34:23] "GET / HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/hammad/email_app/www/myApp.py", line 160, in index
+    return render_template('index.html', permissionURL=oauthAPI.permissionURL())
+NameError: global name 'oauthAPI' is not defined
+75.114.181.162 - - [19/Dec/2013 05:34:23] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+75.114.181.162 - - [19/Dec/2013 05:34:23] "GET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+75.114.181.162 - - [19/Dec/2013 05:34:23] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+75.114.181.162 - - [19/Dec/2013 05:34:24] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+75.114.181.162 - - [19/Dec/2013 05:34:24] "GET /?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+75.114.181.162 - - [19/Dec/2013 05:34:25] "GET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 295, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 321, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 704, in finish
+    self.wfile.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+75.114.181.162 - - [19/Dec/2013 05:35:36] "GET / HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/hammad/email_app/www/myApp.py", line 160, in index
+    return render_template('index.html', permissionURL=oauthAPI.permissionURL())
+NameError: global name 'oauthAPI' is not defined
+75.114.181.162 - - [19/Dec/2013 05:35:36] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+75.114.181.162 - - [19/Dec/2013 05:35:36] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+75.114.181.162 - - [19/Dec/2013 05:35:36] "GET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+75.114.181.162 - - [19/Dec/2013 05:35:37] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+75.114.181.162 - - [19/Dec/2013 05:35:37] "GET /?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+75.114.181.162 - - [19/Dec/2013 05:35:38] "GET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+75.114.181.162 - - [20/Dec/2013 05:41:29] "GET / HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/hammad/email_app/www/myApp.py", line 160, in index
+    return render_template('index.html', permissionURL=oauthAPI.permissionURL())
+NameError: global name 'oauthAPI' is not defined
+75.114.181.162 - - [20/Dec/2013 05:41:29] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+75.114.181.162 - - [20/Dec/2013 05:41:29] "GET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+75.114.181.162 - - [20/Dec/2013 05:41:29] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+75.114.181.162 - - [20/Dec/2013 05:41:30] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+75.114.181.162 - - [20/Dec/2013 05:41:30] "GET /?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+75.114.181.162 - - [20/Dec/2013 05:41:30] "GET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+75.114.181.162 - - [20/Dec/2013 05:41:35] "GET / HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/hammad/email_app/www/myApp.py", line 160, in index
+    return render_template('index.html', permissionURL=oauthAPI.permissionURL())
+NameError: global name 'oauthAPI' is not defined
+75.114.181.162 - - [20/Dec/2013 05:41:38] "GET /loh HTTP/1.1" 404 -
+75.114.181.162 - - [20/Dec/2013 05:41:38] "GET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+75.114.181.162 - - [20/Dec/2013 05:41:38] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+75.114.181.162 - - [20/Dec/2013 05:41:38] "GET /l HTTP/1.1" 404 -
+75.114.181.162 - - [20/Dec/2013 05:41:38] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+75.114.181.162 - - [20/Dec/2013 05:41:39] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+75.114.181.162 - - [20/Dec/2013 05:41:39] "GET /?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+75.114.181.162 - - [20/Dec/2013 05:41:39] "GET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 295, in _handle_request_noblock
+    self.process_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 321, in process_request
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python2.7/SocketServer.py", line 651, in __init__
+    self.finish()
+  File "/usr/lib/python2.7/SocketServer.py", line 704, in finish
+    self.wfile.flush()
+  File "/usr/lib/python2.7/socket.py", line 303, in flush
+    self._sock.sendall(view[write_offset:write_offset+buffer_size])
+error: [Errno 32] Broken pipe
+75.114.181.162 - - [20/Dec/2013 05:41:39] "GET /lohin HTTP/1.1" 404 -
+75.114.181.162 - - [20/Dec/2013 05:41:40] "GET /lohin HTTP/1.1" 404 -
+75.114.181.162 - - [20/Dec/2013 05:41:44] "GET /logi HTTP/1.1" 404 -
+75.114.181.162 - - [20/Dec/2013 05:41:44] "GET /log HTTP/1.1" 404 -
+75.114.181.162 - - [20/Dec/2013 05:41:45] "GET /login HTTP/1.1" 302 -
+75.114.181.162 - - [20/Dec/2013 05:41:46] "GET /login HTTP/1.1" 302 -
+75.114.181.162 - - [20/Dec/2013 05:42:22] "GET /oauth2callback?code=4/Ht7F9hgxKv0pnH9L4SzIvHV_wVee.otvN4vvwAiMRmmS0T3UFEsO09BAdhgI HTTP/1.1" 302 -
+75.114.181.162 - - [20/Dec/2013 05:42:28] "GET /imap HTTP/1.1" 302 -
+75.114.181.162 - - [20/Dec/2013 05:42:38] "GET /imap?folder=Trash HTTP/1.1" 302 -
+75.114.181.162 - - [20/Dec/2013 05:42:38] "GET /summary HTTP/1.1" 200 -
+75.114.181.162 - - [25/Dec/2013 22:56:20] "GET / HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/hammad/email_app/www/myApp.py", line 160, in index
+    return render_template('index.html', permissionURL=oauthAPI.permissionURL())
+NameError: global name 'oauthAPI' is not defined
+75.114.181.162 - - [25/Dec/2013 22:56:20] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+75.114.181.162 - - [25/Dec/2013 22:56:20] "GET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+75.114.181.162 - - [25/Dec/2013 22:56:20] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+75.114.181.162 - - [25/Dec/2013 22:56:21] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+75.114.181.162 - - [25/Dec/2013 22:56:21] "GET /?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+75.114.181.162 - - [25/Dec/2013 22:56:21] "GET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+198.111.167.130 - - [29/Dec/2013 19:02:26] "GET / HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/hammad/email_app/www/myApp.py", line 160, in index
+    return render_template('index.html', permissionURL=oauthAPI.permissionURL())
+NameError: global name 'oauthAPI' is not defined
+198.111.167.130 - - [29/Dec/2013 19:02:26] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+198.111.167.130 - - [29/Dec/2013 19:02:26] "GET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+198.111.167.130 - - [29/Dec/2013 19:02:26] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+198.111.167.130 - - [29/Dec/2013 19:02:27] "GET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+198.111.167.130 - - [29/Dec/2013 19:02:27] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+198.111.167.130 - - [29/Dec/2013 19:02:27] "GET /?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+198.111.167.130 - - [29/Dec/2013 19:02:27] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+198.111.167.130 - - [29/Dec/2013 19:02:43] "GET /login HTTP/1.1" 302 -
+198.111.167.130 - - [29/Dec/2013 19:02:48] "GET /oauth2callback?code=4/5MKb2LCbaSvP4kUXSZVKXkeYBARG.IorYkcvgV_AXmmS0T3UFEsM8Dn1_hgI HTTP/1.1" 302 -
+198.111.167.130 - - [29/Dec/2013 19:02:53] "GET /imap HTTP/1.1" 302 -
+198.111.167.130 - - [29/Dec/2013 19:02:59] "GET /imap?folder=Trash HTTP/1.1" 302 -
+198.111.167.130 - - [29/Dec/2013 19:03:00] "GET /summary HTTP/1.1" 200 -
+75.114.181.162 - - [01/Jan/2014 17:18:56] "GET / HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/hammad/email_app/www/myApp.py", line 160, in index
+    return render_template('index.html', permissionURL=oauthAPI.permissionURL())
+NameError: global name 'oauthAPI' is not defined
+75.114.181.162 - - [01/Jan/2014 17:44:13] "GET / HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/hammad/email_app/www/myApp.py", line 160, in index
+    return render_template('index.html', permissionURL=oauthAPI.permissionURL())
+NameError: global name 'oauthAPI' is not defined
+75.114.181.162 - - [01/Jan/2014 17:44:14] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+75.114.181.162 - - [01/Jan/2014 17:44:14] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+75.114.181.162 - - [01/Jan/2014 17:44:14] "GET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+75.114.181.162 - - [01/Jan/2014 17:44:14] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+75.114.181.162 - - [01/Jan/2014 17:44:14] "GET /?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+75.114.181.162 - - [01/Jan/2014 17:44:15] "GET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+198.20.99.130 - - [13/Jan/2014 23:37:44] "GET / HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/hammad/email_app/www/myApp.py", line 160, in index
+    return render_template('index.html', permissionURL=oauthAPI.permissionURL())
+NameError: global name 'oauthAPI' is not defined
+198.20.99.130 - - [13/Jan/2014 23:37:45] "GET /robots.txt HTTP/1.1" 404 -
+128.84.127.250 - - [19/Jan/2014 05:47:04] "GET / HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/hammad/email_app/www/myApp.py", line 160, in index
+    return render_template('index.html', permissionURL=oauthAPI.permissionURL())
+NameError: global name 'oauthAPI' is not defined
+128.84.127.250 - - [19/Jan/2014 05:47:04] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+128.84.127.250 - - [19/Jan/2014 05:47:04] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+128.84.127.250 - - [19/Jan/2014 05:47:04] "GET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+128.84.127.250 - - [19/Jan/2014 05:47:04] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+128.84.127.250 - - [19/Jan/2014 05:47:05] "GET /?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+128.84.124.160 - - [22/Jan/2014 20:48:47] "GET / HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/hammad/email_app/www/myApp.py", line 160, in index
+    return render_template('index.html', permissionURL=oauthAPI.permissionURL())
+NameError: global name 'oauthAPI' is not defined
+128.84.124.160 - - [22/Jan/2014 20:48:47] "GET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+128.84.124.160 - - [22/Jan/2014 20:48:47] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+128.84.124.160 - - [22/Jan/2014 20:48:47] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+128.84.124.160 - - [22/Jan/2014 20:48:48] "GET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+128.84.124.160 - - [22/Jan/2014 20:48:48] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+128.84.124.160 - - [22/Jan/2014 20:48:48] "GET /?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+128.84.124.160 - - [22/Jan/2014 20:49:38] "GET /login HTTP/1.1" 302 -
+128.84.124.160 - - [22/Jan/2014 20:49:45] "GET /oauth2callback?code=4/qxpSowVE583XjkAotpQIp1olulre.srr2iW4KHGwT3oEBd8DOtNDHI3J3hwI HTTP/1.1" 302 -
+128.84.124.160 - - [22/Jan/2014 20:49:51] "GET /imap HTTP/1.1" 302 -
+128.84.124.160 - - [22/Jan/2014 20:50:00] "GET /imap?folder=Trash HTTP/1.1" 302 -
+128.84.124.160 - - [22/Jan/2014 20:50:03] "GET /summary HTTP/1.1" 200 -
+128.84.124.160 - - [22/Jan/2014 20:50:22] "GET /login HTTP/1.1" 302 -
+128.84.124.160 - - [22/Jan/2014 20:50:22] "GET /favicon.ico HTTP/1.1" 404 -
+128.84.124.160 - - [22/Jan/2014 20:51:30] "GET /oauth2callback?code=4/OqlOb6y7UkCKSjeWKBV7xieWAFpS.snwerc0kF5cf3oEBd8DOtNCRb3N3hwI HTTP/1.1" 302 -
+128.84.124.160 - - [22/Jan/2014 20:51:46] "GET /imap HTTP/1.1" 302 -
+128.84.124.160 - - [22/Jan/2014 20:51:49] "GET /imap?folder=Trash HTTP/1.1" 302 -
+128.84.124.160 - - [22/Jan/2014 20:51:50] "GET /summary HTTP/1.1" 200 -
+128.84.124.160 - - [22/Jan/2014 20:55:40] "GET /favicon.ico HTTP/1.1" 404 -
+128.84.127.99 - - [24/Jan/2014 17:21:01] "GET /login HTTP/1.1" 302 -
+128.84.127.99 - - [24/Jan/2014 17:21:18] "GET /oauth2callback?code=4/HJf2yE-GuESLyi-C4eY_LSJqhAfL.cqPyttfuat4e3oEBd8DOtNDZ4o2KhwI HTTP/1.1" 302 -
+128.84.127.99 - - [24/Jan/2014 17:21:24] "GET /imap HTTP/1.1" 302 -
+128.84.127.99 - - [24/Jan/2014 17:21:33] "GET /imap?folder=Trash HTTP/1.1" 302 -
+128.84.127.99 - - [24/Jan/2014 17:21:34] "GET /summary HTTP/1.1" 200 -
+198.20.99.130 - - [28/Jan/2014 00:56:05] "GET / HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/hammad/email_app/www/myApp.py", line 160, in index
+    return render_template('index.html', permissionURL=oauthAPI.permissionURL())
+NameError: global name 'oauthAPI' is not defined
+198.20.99.130 - - [28/Jan/2014 00:56:05] "GET /robots.txt HTTP/1.1" 404 -
+80.82.64.117 - - [06/Feb/2014 14:10:03] "GET /webman/info.cgi?host=" 404 -
+218.18.101.185 - - [11/Feb/2014 18:18:49] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+190.249.172.197 - - [11/Feb/2014 19:01:01] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+201.200.126.173 - - [11/Feb/2014 19:22:54] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+117.25.196.186 - - [11/Feb/2014 19:54:09] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+83.86.246.108 - - [11/Feb/2014 20:16:18] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+190.254.197.238 - - [11/Feb/2014 20:33:51] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+113.161.75.125 - - [11/Feb/2014 21:23:09] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+187.56.186.163 - - [11/Feb/2014 22:05:03] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+186.193.221.24 - - [11/Feb/2014 22:05:34] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+182.74.89.219 - - [11/Feb/2014 23:12:44] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+184.3.49.156 - - [11/Feb/2014 23:30:23] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+218.6.43.12 - - [12/Feb/2014 00:21:26] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+190.36.157.169 - - [12/Feb/2014 00:41:47] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+78.81.57.94 - - [12/Feb/2014 01:03:00] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+201.151.190.9 - - [12/Feb/2014 02:09:01] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+116.11.70.239 - - [12/Feb/2014 02:31:52] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+88.26.243.210 - - [12/Feb/2014 02:59:31] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+92.51.108.45 - - [12/Feb/2014 03:27:33] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+111.177.51.39 - - [12/Feb/2014 03:46:29] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+78.80.155.195 - - [12/Feb/2014 03:54:02] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+187.34.129.224 - - [12/Feb/2014 05:46:39] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+120.68.51.197 - - [12/Feb/2014 06:25:45] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+177.135.231.17 - - [12/Feb/2014 06:58:15] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+111.179.160.242 - - [12/Feb/2014 08:50:46] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+189.214.95.209 - - [12/Feb/2014 08:59:04] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+117.239.51.186 - - [12/Feb/2014 09:18:37] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+124.237.198.192 - - [12/Feb/2014 10:09:55] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+221.224.247.66 - - [12/Feb/2014 10:12:37] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+114.35.33.155 - - [12/Feb/2014 10:15:12] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+118.232.196.37 - - [12/Feb/2014 10:15:53] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+219.223.117.8 - - [12/Feb/2014 10:22:46] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+1.34.59.56 - - [12/Feb/2014 10:26:24] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+173.73.130.76 - - [12/Feb/2014 15:10:30] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+110.188.95.136 - - [12/Feb/2014 16:22:58] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+113.118.193.65 - - [12/Feb/2014 16:28:35] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+120.68.247.2 - - [12/Feb/2014 17:04:22] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+94.64.71.69 - - [12/Feb/2014 18:06:52] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+98.204.95.17 - - [12/Feb/2014 18:07:31] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+121.96.252.136 - - [12/Feb/2014 18:09:11] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+119.94.227.159 - - [12/Feb/2014 18:25:22] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+121.63.83.33 - - [12/Feb/2014 19:53:27] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+187.20.61.127 - - [12/Feb/2014 21:01:17] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+190.97.83.128 - - [12/Feb/2014 23:10:58] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+175.142.46.253 - - [12/Feb/2014 23:59:01] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+219.134.165.154 - - [13/Feb/2014 00:03:12] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+27.23.231.194 - - [13/Feb/2014 02:23:16] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+200.161.99.104 - - [13/Feb/2014 07:22:00] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+201.192.164.192 - - [13/Feb/2014 07:54:33] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+171.112.190.37 - - [13/Feb/2014 09:25:00] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+178.248.138.36 - - [13/Feb/2014 10:17:52] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+60.165.227.88 - - [13/Feb/2014 11:23:50] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+78.188.112.101 - - [13/Feb/2014 15:26:20] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+171.112.180.217 - - [14/Feb/2014 02:17:09] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+60.165.109.108 - - [14/Feb/2014 04:50:43] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+222.75.110.68 - - [14/Feb/2014 05:40:28] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+182.71.106.170 - - [14/Feb/2014 05:54:41] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+121.154.73.99 - - [14/Feb/2014 07:48:50] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+114.35.228.184 - - [14/Feb/2014 08:50:20] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+1.34.168.248 - - [14/Feb/2014 08:51:25] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+27.153.195.235 - - [14/Feb/2014 09:08:44] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+221.130.99.250 - - [14/Feb/2014 09:11:11] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+105.236.244.240 - - [14/Feb/2014 14:44:11] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+103.249.80.170 - - [14/Feb/2014 15:55:30] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+190.65.24.242 - - [14/Feb/2014 16:46:14] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+190.189.219.173 - - [14/Feb/2014 19:53:32] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+201.147.232.163 - - [14/Feb/2014 23:07:27] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+218.6.46.52 - - [14/Feb/2014 23:34:30] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+124.66.14.97 - - [14/Feb/2014 23:58:40] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+14.148.8.27 - - [15/Feb/2014 00:32:27] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+96.55.97.155 - - [15/Feb/2014 00:45:57] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+212.34.245.145 - - [15/Feb/2014 03:28:42] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+83.166.206.241 - - [15/Feb/2014 06:41:23] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+188.223.33.67 - - [15/Feb/2014 08:43:38] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+61.136.140.229 - - [15/Feb/2014 09:14:23] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+222.33.182.173 - - [15/Feb/2014 11:18:20] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+186.125.86.114 - - [15/Feb/2014 11:47:07] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+218.6.44.88 - - [15/Feb/2014 15:18:21] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+200.124.240.126 - - [15/Feb/2014 16:36:07] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+58.124.165.200 - - [15/Feb/2014 18:00:24] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+123.245.232.38 - - [15/Feb/2014 19:05:30] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+59.127.152.235 - - [15/Feb/2014 19:08:34] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+82.221.105.6 - - [15/Feb/2014 21:30:35] "GET / HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/hammad/email_app/www/myApp.py", line 160, in index
+    return render_template('index.html', permissionURL=oauthAPI.permissionURL())
+NameError: global name 'oauthAPI' is not defined
+82.221.105.6 - - [15/Feb/2014 21:30:35] "GET /robots.txt HTTP/1.1" 404 -
+184.101.241.202 - - [15/Feb/2014 22:58:17] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+116.209.129.127 - - [15/Feb/2014 23:41:44] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+201.212.238.130 - - [16/Feb/2014 06:02:51] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+218.6.43.144 - - [16/Feb/2014 08:40:19] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+123.121.4.123 - - [16/Feb/2014 08:45:40] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+125.91.101.214 - - [16/Feb/2014 10:32:03] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+115.234.83.92 - - [16/Feb/2014 10:32:38] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+82.247.221.7 - - [16/Feb/2014 14:31:33] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+121.63.209.26 - - [16/Feb/2014 18:16:07] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+37.142.255.174 - - [16/Feb/2014 18:38:29] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+187.54.3.179 - - [16/Feb/2014 20:32:53] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+121.62.151.78 - - [16/Feb/2014 20:37:45] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+222.34.130.85 - - [16/Feb/2014 21:44:17] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+97.96.192.209 - - [16/Feb/2014 23:29:15] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+201.216.154.143 - - [17/Feb/2014 00:24:28] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+113.116.61.57 - - [17/Feb/2014 01:30:21] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+88.247.214.78 - - [17/Feb/2014 10:21:51] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+212.156.173.232 - - [17/Feb/2014 11:26:06] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+221.232.97.20 - - [17/Feb/2014 11:50:07] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+111.179.254.23 - - [17/Feb/2014 11:55:38] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+220.165.78.23 - - [17/Feb/2014 12:03:53] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+88.102.112.91 - - [17/Feb/2014 14:23:53] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+85.105.132.255 - - [17/Feb/2014 14:24:21] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+213.160.160.119 - - [17/Feb/2014 21:28:01] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+222.18.159.7 - - [18/Feb/2014 02:20:04] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+122.5.23.155 - - [18/Feb/2014 02:23:15] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+212.233.155.121 - - [18/Feb/2014 05:27:10] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+145.236.27.159 - - [18/Feb/2014 09:24:18] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+220.162.159.131 - - [18/Feb/2014 10:50:07] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+59.40.195.133 - - [19/Feb/2014 00:14:49] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+218.65.208.45 - - [19/Feb/2014 04:22:05] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+121.63.58.90 - - [19/Feb/2014 05:14:00] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+186.236.130.186 - - [20/Feb/2014 05:15:01] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+ * Detected change in '/home/hammad/email_app/venv/lib/python2.7/abc.py', reloading
+----------------------------------------
+Exception happened during processing of request from ('75.114.181.162', 41362)
+----------------------------------------
+----------------------------------------
+Exception happened during processing of request from ('75.114.181.162', 44801)
+----------------------------------------
+ * Restarting with reloader
+113.13.184.91 - - [20/Feb/2014 21:48:41] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+114.35.179.82 - - [21/Feb/2014 05:35:04] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+175.141.153.59 - - [21/Feb/2014 13:24:39] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+187.20.141.51 - - [21/Feb/2014 16:26:13] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+218.6.37.103 - - [22/Feb/2014 00:19:06] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+50.124.90.114 - - [22/Feb/2014 11:40:53] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+171.214.207.31 - - [22/Feb/2014 11:42:24] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+116.209.152.138 - - [23/Feb/2014 04:18:42] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+80.82.64.117 - - [23/Feb/2014 07:37:29] "GET /webman/info.cgi?host=" 404 -
+120.7.237.148 - - [23/Feb/2014 20:09:33] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+171.112.141.173 - - [24/Feb/2014 06:35:37] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+122.226.43.210 - - [24/Feb/2014 19:47:50] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+60.51.45.67 - - [24/Feb/2014 21:04:46] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+60.250.69.206 - - [24/Feb/2014 21:12:53] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+110.171.122.227 - - [24/Feb/2014 22:05:37] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+115.132.55.127 - - [25/Feb/2014 03:26:37] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+182.52.109.109 - - [25/Feb/2014 03:47:56] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+98.174.204.154 - - [27/Feb/2014 05:13:06] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+128.84.127.105 - - [27/Feb/2014 05:24:08] "GET / HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/hammad/email_app/www/myApp.py", line 160, in index
+    return render_template('index.html', permissionURL=oauthAPI.permissionURL())
+NameError: global name 'oauthAPI' is not defined
+128.84.127.105 - - [27/Feb/2014 05:24:08] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+128.84.127.105 - - [27/Feb/2014 05:24:08] "GET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+128.84.127.105 - - [27/Feb/2014 05:24:08] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+128.84.127.105 - - [27/Feb/2014 05:24:08] "GET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+128.84.127.105 - - [27/Feb/2014 05:24:08] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+128.84.127.105 - - [27/Feb/2014 05:24:08] "GET /?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+128.84.127.105 - - [27/Feb/2014 05:24:08] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+128.84.127.105 - - [27/Feb/2014 05:24:19] "GET /oauth2callback HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/hammad/email_app/www/myApp.py", line 209, in oauth2callback
+    accesstoken = response["access_token"]
+KeyError: 'access_token'
+128.84.127.105 - - [27/Feb/2014 05:24:19] "GET /oauth2callback?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+128.84.127.105 - - [27/Feb/2014 05:24:20] "GET /oauth2callback?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+128.84.127.105 - - [27/Feb/2014 05:24:33] "GET /oauth2callback?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+128.84.127.105 - - [27/Feb/2014 05:24:33] "GET /oauth2callback?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+128.84.127.105 - - [27/Feb/2014 05:24:33] "GET /oauth2callback?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+128.84.127.105 - - [27/Feb/2014 05:24:33] "GET /oauth2callback?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+128.84.127.105 - - [27/Feb/2014 05:24:33] "GET /oauth2callback?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+128.84.127.105 - - [27/Feb/2014 05:24:39] "GET /login HTTP/1.1" 302 -
+128.84.127.105 - - [27/Feb/2014 05:24:45] "GET /oauth2callback?code=4/VDVjP_8cqpBjhK5PWnkQ5NMPgk4K.kv-uitOKE_of3oEBd8DOtNDxSZ7jiAI HTTP/1.1" 302 -
+128.84.127.105 - - [27/Feb/2014 05:24:50] "GET /imap HTTP/1.1" 302 -
+128.84.127.105 - - [27/Feb/2014 05:24:58] "GET /imap?folder=Trash HTTP/1.1" 302 -
+128.84.127.105 - - [27/Feb/2014 05:24:58] "GET /summary HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/hammad/email_app/www/myApp.py", line 296, in summary
+    hourdayCount[e.date.hour][e.date.day] += 1
+IndexError: list index out of range
+128.84.127.105 - - [27/Feb/2014 05:24:58] "GET /summary?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+128.84.127.105 - - [27/Feb/2014 05:24:58] "GET /summary?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+128.84.127.105 - - [27/Feb/2014 05:24:58] "GET /summary?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+128.84.127.105 - - [27/Feb/2014 05:24:58] "GET /summary?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+128.84.127.105 - - [27/Feb/2014 05:24:58] "GET /summary?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+128.84.127.105 - - [27/Feb/2014 05:24:58] "GET /summary?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+128.84.127.105 - - [27/Feb/2014 05:24:58] "GET /summary?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+128.84.127.105 - - [27/Feb/2014 05:25:08] "GET /summary HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/hammad/email_app/www/myApp.py", line 296, in summary
+    hourdayCount[e.date.hour][e.date.day] += 1
+IndexError: list index out of range
+128.84.127.105 - - [27/Feb/2014 05:25:08] "GET /summary?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+128.84.127.105 - - [27/Feb/2014 05:25:08] "GET /summary?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+128.84.127.105 - - [27/Feb/2014 05:25:08] "GET /summary?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+128.84.127.105 - - [27/Feb/2014 05:25:08] "GET /summary?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+128.84.127.105 - - [27/Feb/2014 05:25:08] "GET /summary?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+128.84.127.105 - - [27/Feb/2014 05:25:08] "GET /summary?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+79.185.174.116 - - [27/Feb/2014 13:04:51] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+202.188.206.58 - - [27/Feb/2014 14:59:12] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+190.224.206.104 - - [27/Feb/2014 17:35:34] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+14.144.106.129 - - [27/Feb/2014 22:18:56] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+120.69.249.94 - - [27/Feb/2014 22:19:53] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+113.111.148.243 - - [27/Feb/2014 22:39:29] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+58.216.217.6 - - [27/Feb/2014 22:41:56] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+119.128.160.191 - - [27/Feb/2014 22:42:21] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+218.6.36.174 - - [27/Feb/2014 23:00:04] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+118.101.1.229 - - [28/Feb/2014 06:00:45] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+109.65.34.110 - - [28/Feb/2014 07:55:12] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+187.41.75.86 - - [28/Feb/2014 10:04:21] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+190.199.44.88 - - [28/Feb/2014 10:08:15] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+190.146.165.35 - - [28/Feb/2014 10:30:22] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+190.156.229.39 - - [28/Feb/2014 10:38:56] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+181.48.158.246 - - [28/Feb/2014 10:47:34] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+187.150.70.147 - - [28/Feb/2014 11:38:59] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+201.153.67.252 - - [28/Feb/2014 11:39:13] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+189.228.18.178 - - [28/Feb/2014 11:39:26] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+68.170.89.105 - - [28/Feb/2014 11:39:44] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+181.196.188.234 - - [28/Feb/2014 11:44:18] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+201.203.178.246 - - [28/Feb/2014 12:59:44] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+108.253.134.36 - - [28/Feb/2014 14:40:43] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+175.121.93.67 - - [28/Feb/2014 18:04:19] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+218.37.226.137 - - [28/Feb/2014 18:05:15] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+106.243.202.125 - - [28/Feb/2014 18:05:30] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+183.100.27.53 - - [28/Feb/2014 18:07:50] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+173.14.16.81 - - [28/Feb/2014 18:46:23] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+218.6.17.177 - - [28/Feb/2014 19:06:59] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+219.92.249.130 - - [28/Feb/2014 19:11:51] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+220.132.245.24 - - [28/Feb/2014 19:27:42] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+58.39.60.88 - - [28/Feb/2014 22:54:25] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+79.180.62.170 - - [01/Mar/2014 00:07:38] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+185.14.132.30 - - [01/Mar/2014 00:12:56] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+182.219.127.108 - - [01/Mar/2014 00:42:37] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+213.156.97.229 - - [01/Mar/2014 01:04:12] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+109.64.60.201 - - [01/Mar/2014 01:07:12] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+72.69.224.121 - - [01/Mar/2014 03:01:58] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+187.193.95.67 - - [01/Mar/2014 03:04:50] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+1.34.121.14 - - [01/Mar/2014 03:08:07] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+117.192.187.101 - - [01/Mar/2014 03:10:03] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+115.72.77.141 - - [01/Mar/2014 03:20:42] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+58.177.18.99 - - [01/Mar/2014 03:56:48] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+14.213.119.23 - - [01/Mar/2014 03:57:38] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+112.252.213.2 - - [01/Mar/2014 04:02:24] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+114.218.99.68 - - [01/Mar/2014 04:11:49] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+190.195.173.40 - - [01/Mar/2014 06:06:38] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+177.40.230.122 - - [01/Mar/2014 06:10:46] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+177.179.87.101 - - [01/Mar/2014 06:13:35] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+59.176.69.156 - - [01/Mar/2014 06:25:35] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+117.203.104.17 - - [01/Mar/2014 06:27:13] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+201.209.230.45 - - [01/Mar/2014 07:36:02] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+190.69.240.250 - - [01/Mar/2014 07:59:04] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+200.71.37.151 - - [01/Mar/2014 08:06:30] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+190.211.119.147 - - [01/Mar/2014 09:07:28] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+78.189.145.189 - - [01/Mar/2014 09:54:49] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+78.97.7.126 - - [01/Mar/2014 09:56:10] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+189.173.72.105 - - [01/Mar/2014 10:23:35] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+76.126.132.6 - - [01/Mar/2014 10:36:18] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+83.22.27.7 - - [01/Mar/2014 11:19:48] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+113.82.156.45 - - [01/Mar/2014 11:32:40] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+189.22.108.19 - - [01/Mar/2014 11:50:00] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+212.174.26.59 - - [01/Mar/2014 11:56:37] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+113.98.84.40 - - [01/Mar/2014 11:56:39] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+182.184.111.163 - - [01/Mar/2014 11:59:36] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+124.148.97.159 - - [01/Mar/2014 12:07:24] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+190.249.145.29 - - [01/Mar/2014 13:08:44] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+59.181.129.58 - - [01/Mar/2014 14:35:25] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+190.252.2.90 - - [01/Mar/2014 17:09:13] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+182.225.93.247 - - [01/Mar/2014 17:51:53] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+181.194.118.168 - - [01/Mar/2014 17:55:33] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+186.15.1.227 - - [01/Mar/2014 17:57:02] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+83.147.112.15 - - [01/Mar/2014 18:01:00] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+79.18.87.174 - - [01/Mar/2014 18:20:06] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+113.85.116.125 - - [01/Mar/2014 18:55:17] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+121.228.98.169 - - [01/Mar/2014 19:04:43] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+14.125.100.86 - - [01/Mar/2014 19:06:59] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+37.106.44.144 - - [01/Mar/2014 19:51:12] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+114.32.254.81 - - [01/Mar/2014 20:08:11] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+176.192.59.26 - - [01/Mar/2014 22:57:19] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+195.98.183.250 - - [01/Mar/2014 22:57:33] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+31.15.88.122 - - [01/Mar/2014 22:57:34] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+177.98.162.12 - - [01/Mar/2014 23:06:26] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+151.250.212.78 - - [02/Mar/2014 00:57:57] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+190.253.77.125 - - [02/Mar/2014 01:05:02] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+190.249.131.158 - - [02/Mar/2014 01:05:50] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+60.248.78.254 - - [02/Mar/2014 01:17:21] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+91.205.154.82 - - [02/Mar/2014 01:54:43] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+187.137.36.78 - - [02/Mar/2014 02:13:29] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+71.249.255.95 - - [02/Mar/2014 02:54:07] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+64.20.71.210 - - [02/Mar/2014 02:57:23] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+14.220.27.211 - - [02/Mar/2014 02:57:46] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+188.251.223.68 - - [02/Mar/2014 02:58:25] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+179.234.20.78 - - [02/Mar/2014 04:59:33] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+177.64.49.68 - - [02/Mar/2014 05:53:49] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+177.142.4.135 - - [02/Mar/2014 05:56:44] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+189.100.181.40 - - [02/Mar/2014 05:57:33] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+177.44.128.124 - - [02/Mar/2014 05:57:36] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+179.176.198.224 - - [02/Mar/2014 06:01:59] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+72.215.36.101 - - [02/Mar/2014 07:14:18] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+190.37.102.40 - - [02/Mar/2014 07:27:35] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+85.104.109.153 - - [02/Mar/2014 07:38:12] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+187.206.224.1 - - [02/Mar/2014 07:55:14] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+186.112.155.38 - - [02/Mar/2014 07:56:58] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+190.66.193.148 - - [02/Mar/2014 07:57:41] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+181.52.251.55 - - [02/Mar/2014 07:58:37] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+187.158.131.68 - - [02/Mar/2014 08:52:41] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+174.79.127.126 - - [02/Mar/2014 08:54:42] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+187.150.36.104 - - [02/Mar/2014 08:56:29] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+201.197.180.30 - - [02/Mar/2014 08:59:00] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+64.183.215.186 - - [02/Mar/2014 08:59:40] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+201.110.101.32 - - [02/Mar/2014 09:00:24] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+190.248.94.142 - - [02/Mar/2014 09:40:14] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+2.122.76.240 - - [02/Mar/2014 09:49:50] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+198.20.99.130 - - [02/Mar/2014 11:07:42] "GET / HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/hammad/email_app/venv/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/hammad/email_app/www/myApp.py", line 160, in index
+    return render_template('index.html', permissionURL=oauthAPI.permissionURL())
+NameError: global name 'oauthAPI' is not defined
+198.20.99.130 - - [02/Mar/2014 11:07:42] "GET /robots.txt HTTP/1.1" 404 -
+95.70.221.137 - - [02/Mar/2014 14:10:27] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+36.77.245.170 - - [02/Mar/2014 15:55:19] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+95.9.89.203 - - [02/Mar/2014 17:01:32] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+107.139.98.137 - - [02/Mar/2014 19:39:57] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+88.253.222.156 - - [02/Mar/2014 20:33:32] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+24.139.97.192 - - [02/Mar/2014 21:47:35] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+222.118.210.115 - - [02/Mar/2014 22:47:14] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+212.156.209.38 - - [03/Mar/2014 00:50:18] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+5.54.15.148 - - [03/Mar/2014 00:53:10] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+85.105.169.171 - - [03/Mar/2014 01:44:49] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+87.103.208.62 - - [03/Mar/2014 11:02:59] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+190.134.141.214 - - [03/Mar/2014 11:09:11] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+124.80.165.139 - - [03/Mar/2014 13:21:19] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+61.143.185.161 - - [03/Mar/2014 14:00:22] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+188.119.3.207 - - [03/Mar/2014 14:24:32] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+114.201.9.158 - - [03/Mar/2014 14:24:56] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+71.172.187.46 - - [03/Mar/2014 15:21:25] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+182.225.93.247 - - [03/Mar/2014 17:30:59] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+180.231.95.63 - - [03/Mar/2014 17:34:52] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+59.24.238.102 - - [03/Mar/2014 17:51:37] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+14.37.216.53 - - [03/Mar/2014 17:51:52] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+175.211.192.65 - - [03/Mar/2014 17:52:08] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+125.129.36.105 - - [03/Mar/2014 17:52:55] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+180.65.50.136 - - [03/Mar/2014 17:53:46] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+110.45.81.42 - - [03/Mar/2014 17:53:54] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+112.170.117.64 - - [03/Mar/2014 17:55:25] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+125.69.7.178 - - [03/Mar/2014 18:02:09] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+95.6.56.230 - - [03/Mar/2014 18:18:41] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+14.157.133.243 - - [03/Mar/2014 18:32:50] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+222.188.168.117 - - [03/Mar/2014 18:33:14] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+114.238.210.90 - - [03/Mar/2014 18:33:27] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+119.73.197.190 - - [03/Mar/2014 18:34:06] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+60.188.142.165 - - [03/Mar/2014 18:34:28] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+182.127.93.220 - - [03/Mar/2014 18:36:25] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+14.221.103.142 - - [03/Mar/2014 18:36:29] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+49.159.184.37 - - [03/Mar/2014 18:36:33] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+58.176.247.48 - - [03/Mar/2014 18:36:39] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+125.110.234.129 - - [03/Mar/2014 18:36:42] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+119.145.215.86 - - [03/Mar/2014 18:36:44] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+113.195.134.117 - - [03/Mar/2014 18:36:58] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+110.180.208.178 - - [03/Mar/2014 18:37:09] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+110.113.106.238 - - [03/Mar/2014 18:37:18] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+113.84.187.132 - - [03/Mar/2014 18:38:50] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+112.116.213.226 - - [03/Mar/2014 18:39:33] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+125.89.161.106 - - [03/Mar/2014 18:40:04] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+113.85.230.82 - - [03/Mar/2014 18:40:12] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+119.128.166.184 - - [03/Mar/2014 18:41:03] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+121.203.21.152 - - [03/Mar/2014 18:41:28] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+111.74.171.208 - - [03/Mar/2014 18:42:17] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+115.225.72.10 - - [03/Mar/2014 18:46:10] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+183.36.34.149 - - [03/Mar/2014 18:47:49] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+180.113.205.193 - - [03/Mar/2014 18:48:51] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+111.39.110.187 - - [03/Mar/2014 18:50:17] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+183.48.160.231 - - [03/Mar/2014 18:50:17] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+139.210.167.35 - - [03/Mar/2014 18:50:54] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+122.227.33.134 - - [03/Mar/2014 18:51:09] "GET /webman/info.cgi?host= HTTP/1.0" 404 -
+175.201.160.198 - - [03/Mar/2014 18:51:17] "GET /webman/info.cgi?host= HTTP/1.0" 404 -

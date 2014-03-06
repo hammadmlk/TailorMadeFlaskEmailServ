@@ -1,0 +1,12 @@
+import oauth2
+import imaplib
+import email
+emailid         = "hammadmlk@gmail.com"client_id       ="your cliend id"
+client_secret   ="your client secret"
+refresh_token   ="refresh token for the user"
+oauth2String        = oauth2.GenerateOAuth2String(emailid,access_token,base64_encode=False) #before passing into IMAPLib access token needs to be converted into string
+mail = imaplib.IMAP4_SSL('imap.gmail.com')
+mail.authenticate('XOAUTH2', lambda x: oAuthString)
+mail.select("inbox") # connect to inbox.
+#rest of the code to play with emails
+#for more info please check the link on top

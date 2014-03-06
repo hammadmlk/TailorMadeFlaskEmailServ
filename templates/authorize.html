@@ -1,0 +1,12 @@
+<!doctype html>
+<title>TailorMade Games - Authorize</title>
+
+<h1>Refresh Token: {{tokens['refresh_token']}}  </h1>   
+<h1>Access Token: {{tokens['access_token']}}  </h1>   
+<h1>Expires in: {{tokens['expires_in']}}  </h1>   
+
+{% if name %}
+  <h1>Hello {{ name }}!</h1>
+{% else %}
+  <h1>Hello Nameless!</h1>
+{% endif %}
