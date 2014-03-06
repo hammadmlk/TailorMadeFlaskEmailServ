@@ -11,7 +11,9 @@ from modules.oauth2 import AuthorizeTokens
 
 from imapclient.imapclient import IMAPClient
 from email.parser import Parser
+from flask import jsonify
 
+import pytz
 import datetime
 import sys
 import json
@@ -242,6 +244,44 @@ def tokens():
     return "DONE"
 
 
+@app.route('/json', methods=["GET"])
+def json():
+
+    mailbox_name = request.args.get('mailbox_name','')
+
+    if (mailbox_name==''):
+        return "error: no mailbox_name"
+    
+    stri=""
+    #### By hour of day (Received)
+    stri += "\n\n||By Hour of Day(Received). \n  Hour \t(Sum) \tday1 \tday2 \tday3 \tday4 \tday5 \tday6 ... ..."       
+    hourdayCount = [[0 for x in range(31)] for y in range(24)]
+    
+    #sentEmails = db.session.query(Email, EmailAddr).filter(Email.msgid==EmailAddr.msgid).\
+    #                     filter(EmailAddr.type=='from').filter(EmailAddr.emailaddress==mailbox_name)
+    
+    receivedEmails = db.session.query(Email, EmailAddr).filter(Email.msgid==EmailAddr.msgid).\
+                         filter(EmailAddr.type=='to').filter(EmailAddr.emailaddress==mailbox_name)
+    
+    for e, a in receivedEmails.all():
+        #print "e::"+ str(e.date)
+        #print "a::"+str(a)
+        #print e.date.day, '-', e.date.hour
+        hourdayCount[e.date.hour][e.date.day] += 1
+    
+    jsonArray = [0 for x in range(24)]
+    for h in range(24):
+        stri += "\n  " + str(h)
+        for d in range(31):
+            if (d == 0):
+                sum = reduce(lambda x, y: x + y, hourdayCount[h]) #/ len(hourdayCount[h])
+                jsonArray[h]=sum;
+                stri+= '\t' + str(sum)
+            stri += '\t' + str(hourdayCount[h][d])
+    ####
+    return jsonify(results=jsonArray)
+    
+    
 @app.route('/summary', methods=["GET"])
 def summary():
     mailbox_name = str(request.cookies.get('email'))
@@ -252,7 +292,7 @@ def summary():
     stri+= '\n\n||TOTAL EMAILS IN DB'
     stri+= '\n  '+ str(Email.query.count())
     
-    stri+= '\n\n||Total Emails from ' + mailbox_name + ':'
+    stri+= '\n\n||Total Emails from mailbox of ' + mailbox_name + ':'
     stri+= '\n  '+ str(Email.query.filter_by(mailbox=mailbox_name).count())
     ###
     
@@ -287,12 +327,20 @@ def summary():
             stri += '\t' + str(weekdayCount[i][j])
     ####
     
-    #### By hour of day
-    stri += "\n\n||By Hour of Day. \n  Hour \t(Sum) \tday1 \tday2 \tday3 \tday4 \tday5 \tday6 ... ..."       
+    #### By hour of day (Received)
+    stri += "\n\n||By Hour of Day(Received). \n  Hour \t(Sum) \tday1 \tday2 \tday3 \tday4 \tday5 \tday6 ... ..."       
     hourdayCount = [[0 for x in range(31)] for y in range(24)]
     
-    for e in Email.query.filter_by(mailbox=mailbox_name).all():
-        #print e.date.day, '-', e.date.hour        
+    #sentEmails = db.session.query(Email, EmailAddr).filter(Email.msgid==EmailAddr.msgid).\
+    #                     filter(EmailAddr.type=='from').filter(EmailAddr.emailaddress==mailbox_name)
+    
+    receivedEmails = db.session.query(Email, EmailAddr).filter(Email.msgid==EmailAddr.msgid).\
+                         filter(EmailAddr.type=='to').filter(EmailAddr.emailaddress==mailbox_name)
+    
+    for e, a in receivedEmails.all():
+        #print "e::"+ str(e.date)
+        #print "a::"+str(a)
+        #print e.date.day, '-', e.date.hour
         hourdayCount[e.date.hour][e.date.day] += 1
     
     for h in range(24):
@@ -303,7 +351,6 @@ def summary():
                 stri+= '\t' + str(sum)
             stri += '\t' + str(hourdayCount[h][d])
     ####
-
 
     return '<pre>'+stri+'</pre>'
     
@@ -323,8 +370,7 @@ def sql():
     
     return '<pre>'+str("\n\n==== SENT EMAILS "+str(sentEmails.count())+" : ===== \n\n")+str(sentEmails.all())+'</pre>'+\
             '<pre>'+str("\n\n==== RECEIVED EMAILS "+str(receivedEmails.count())+" : ===== \n\n")+str(receivedEmails.all())+'</pre>'
-    
-    
+        
     #return '<pre>'+str(emails)+'</pre>'+'<pre>'+str(emailaddrs)+'</pre>'
 
 @app.route('/imap', methods=['GET'])
