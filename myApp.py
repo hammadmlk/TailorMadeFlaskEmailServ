@@ -13,7 +13,7 @@ from imapclient.imapclient import IMAPClient
 from email.parser import Parser
 from flask import jsonify
 
-import pytz
+#import pytz
 import datetime
 import sys
 import json
@@ -244,8 +244,8 @@ def tokens():
     return "DONE"
 
 
-@app.route('/json', methods=["GET"])
-def json():
+@app.route('/makejson', methods=["GET"])
+def makejson():
 
     mailbox_name = request.args.get('mailbox_name','')
 
@@ -267,7 +267,8 @@ def json():
         #print "e::"+ str(e.date)
         #print "a::"+str(a)
         #print e.date.day, '-', e.date.hour
-        hourdayCount[e.date.hour][e.date.day] += 1
+        dd=e.date - datetime.timedelta(hours=5) #5*60*60)# 1800 #30 minutes is 1800 secs
+        hourdayCount[dd.hour][dd.day] += 1
     
     jsonArray = [0 for x in range(24)]
     for h in range(24):
@@ -279,7 +280,7 @@ def json():
                 stri+= '\t' + str(sum)
             stri += '\t' + str(hourdayCount[h][d])
     ####
-    return jsonify(results=jsonArray)
+    return jsonify(emailsPerHour=jsonArray)
     
     
 @app.route('/summary', methods=["GET"])
@@ -376,9 +377,9 @@ def sql():
 @app.route('/imap', methods=['GET'])
 def imapPage():
 
-    folder = request.args.get('folder','')
-    if (folder == ''):
-        folder="All Mail"
+    #folder = request.args.get('folder','')
+    #if (folder == ''):
+    #    folder="All Mail"
     
     email = request.cookies.get('email')
     accesskey = request.cookies.get('ak')
@@ -389,85 +390,98 @@ def imapPage():
         
         server.oauth2_login(email, accesskey)
         
-        #PRINT FOLDERS
-        #folders = server.list_folders()
-        #for folderx in folders:
-        #    print folderx
+        #GET FOLDERS
+        folders = server.list_folders()
+        stri="";
+        for folderx in folders:
+            print folderx
+            if 'SPAM' not in folderx[2].upper() and 'JUNK' not in folderx[2].upper() and folderx[2].upper()!='[GMAIL]':
+                print "entered"
+                folder=folderx[2]
+                stri = stri + "\n"+str(folderx[0])+'|'+str(folderx[1])+'|'+str(folderx[2]);
         
+                select_info = 0
+                try:
+                    select_info = server.select_folder(folder, readonly=True)
+                except Exception, e:
+                    print "MAILBOX ERROR??"
+                    print e.__doc__
+                    print e.message
+                    continue
+                                
+                #print select_info
+                
+                #messages = server.search(['SINCE 05-Feb-2014 NOT FROM \"facebook\"'])
+                messages = server.search(['SINCE 11-Feb-2014'])
         
-        select_info = server.select_folder('[Gmail]/'+folder, readonly=True) 
-        #print select_info
-        
-        #messages = server.search(['SINCE 05-Feb-2014 NOT FROM \"facebook\"'])
-        messages = server.search(['SINCE 06-Feb-2014'])
-        
-        #print "-"
-        #print messages
-        #print "-"
+                #print "-"
+                #print messages
+                #print "-"
+                            
+                response = server.fetch(messages, ['X-GM-MSGID', 'X-GM-THRID', 'FLAGS', 'INTERNALDATE', 'ENVELOPE'])
+                for msgid, data in response.iteritems():
                     
-        response = server.fetch(messages, ['X-GM-MSGID', 'X-GM-THRID', 'FLAGS', 'INTERNALDATE', 'ENVELOPE'])
-        for msgid, data in response.iteritems():
+                    #print "==========="
+                    #print data['FLAGS']
+                    #print data['INTERNALDATE']
+                    #print data['ENVELOPE']
+                    #print data['BODY[HEADER]']
             
-            #print "==========="
-            #print data['FLAGS']
-            #print data['INTERNALDATE']
-            #print data['ENVELOPE']
-            #print data['BODY[HEADER]']
+                    '''
+                    The fields of the envelope structure are in the following order: date, subject, from, sender, reply-to, to, cc, bcc, in-reply-to, and message-id.  
+                    The date, subject, in-reply-to, and message-id fields are strings.  
+                    The from, sender, reply-to, to, cc, and bcc fields are parenthesized lists of address structures.
+                    '''
+                    ##
+                    #Making proper data structure for Envelope
+                    ##
+                    env = {}
+                    env['date']= data['ENVELOPE'][0]
+                    env['subject']= data['ENVELOPE'][1]
+                    env['in-reply-to']= data['ENVELOPE'][8]
+                    env['message-id']= data['ENVELOPE'][9]
+                    
+                    env['from']= ParseAddressStructure(data['ENVELOPE'][2])
+                    env['sender']= ParseAddressStructure(data['ENVELOPE'][3])
+                    env['reply-to']= ParseAddressStructure(data['ENVELOPE'][4])
+                    env['to']= ParseAddressStructure(data['ENVELOPE'][5])
+                    env['cc']= ParseAddressStructure(data['ENVELOPE'][6])
+                    env['bcc']= ParseAddressStructure(data['ENVELOPE'][7])
+                    
+                    em = Email(email, data['X-GM-MSGID'],data['X-GM-THRID'],env['subject'], data['INTERNALDATE'], env['in-reply-to'])
+                    
+                    try:
+                        db.session.add(em)
+                        db.session.flush()
+                    except IntegrityError:
+                        db.session.rollback()
+                        #print "Duplicate Ignored\n"
+                    
+                    addEmailAddrToDd(db, email, data['X-GM-MSGID'], 'from', env['from'] )
+                    addEmailAddrToDd(db, email, data['X-GM-MSGID'], 'sender', env['sender'] )
+                    addEmailAddrToDd(db, email, data['X-GM-MSGID'], 'reply-to', env['reply-to'] )
+                    addEmailAddrToDd(db, email, data['X-GM-MSGID'], 'to', env['to'] )
+                    addEmailAddrToDd(db, email, data['X-GM-MSGID'], 'cc', env['cc'] )
+                    addEmailAddrToDd(db, email, data['X-GM-MSGID'], 'bcc', env['bcc'] )
+                    
+                    
+                    #  Or for parsing headers in a string, use:
+                    #headers = Parser().parsestr(data['BODY[HEADER]'])                
+                    #  Now the header items can be accessed as a dictionary:
+                    #print 'To: %s' % headers['to']
+                    #print 'From: %s' % headers['from']
+                    #print 'Subject: %s' % headers['Subject'] 
+                    #print 'Date: %s' % headers['date']
+                    #print "+++++++"
             
-            '''
-            The fields of the envelope structure are in the following order: date, subject, from, sender, reply-to, to, cc, bcc, in-reply-to, and message-id.  
-            The date, subject, in-reply-to, and message-id fields are strings.  
-            The from, sender, reply-to, to, cc, and bcc fields are parenthesized lists of address structures.
-            '''
-            ##
-            #Making proper data structure for Envelope
-            ##
-            env = {}
-            env['date']= data['ENVELOPE'][0]
-            env['subject']= data['ENVELOPE'][1]
-            env['in-reply-to']= data['ENVELOPE'][8]
-            env['message-id']= data['ENVELOPE'][9]
-            
-            env['from']= ParseAddressStructure(data['ENVELOPE'][2])
-            env['sender']= ParseAddressStructure(data['ENVELOPE'][3])
-            env['reply-to']= ParseAddressStructure(data['ENVELOPE'][4])
-            env['to']= ParseAddressStructure(data['ENVELOPE'][5])
-            env['cc']= ParseAddressStructure(data['ENVELOPE'][6])
-            env['bcc']= ParseAddressStructure(data['ENVELOPE'][7])
-            
-            em = Email(email, data['X-GM-MSGID'],data['X-GM-THRID'],env['subject'], data['INTERNALDATE'], env['in-reply-to'])
-            
-            try:
-                db.session.add(em)
-                db.session.flush()
-            except IntegrityError:
-                db.session.rollback()
-                #print "Duplicate Ignored\n"
-            
-            addEmailAddrToDd(db, email, data['X-GM-MSGID'], 'from', env['from'] )
-            addEmailAddrToDd(db, email, data['X-GM-MSGID'], 'sender', env['sender'] )
-            addEmailAddrToDd(db, email, data['X-GM-MSGID'], 'reply-to', env['reply-to'] )
-            addEmailAddrToDd(db, email, data['X-GM-MSGID'], 'to', env['to'] )
-            addEmailAddrToDd(db, email, data['X-GM-MSGID'], 'cc', env['cc'] )
-            addEmailAddrToDd(db, email, data['X-GM-MSGID'], 'bcc', env['bcc'] )
-            
-            
-            #  Or for parsing headers in a string, use:
-            #headers = Parser().parsestr(data['BODY[HEADER]'])                
-            #  Now the header items can be accessed as a dictionary:
-            #print 'To: %s' % headers['to']
-            #print 'From: %s' % headers['from']
-            #print 'Subject: %s' % headers['Subject'] 
-            #print 'Date: %s' % headers['date']
-            #print "+++++++"
-            
-        db.session.commit()
+                db.session.commit()
     
     
-    if (folder=="All Mail"):
-        return redirect('/imap?folder=Trash')
-    if (folder=="Trash"):
-        return redirect('/summary')
+    #if (folder=="All Mail"):
+    #    return redirect('/imap?folder=Trash')
+    #if (folder=="Trash"):
+        #return redirect('/summary')
+        return redirect('https://docs.google.com/a/cornell.edu/forms/d/19fsDE10624ZDFsifJDoLI-IzkVObNoutXILwm91HA7A/viewform')
     return 'Error SW32 - check GET parameters'
     
     
