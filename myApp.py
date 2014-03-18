@@ -12,6 +12,8 @@ from modules.oauth2 import AuthorizeTokens
 from imapclient.imapclient import IMAPClient
 from email.parser import Parser
 from flask import jsonify
+import csv
+        
 
 #import pytz
 import datetime
@@ -67,7 +69,7 @@ class EmailAddr(db.Model):
     def __repr__(self):
         return '   MAILBOX: %s, MSG-ID: %d,   TYPE: %s,   EMAIL-ADDRESS: %s \n' % (self.mailbox, self.msgid, self.type, self.emailaddress)
 
-db.create_all()        
+db.create_all()
 
 
 def addEmailAddrToDd(db, mailbox, msgid, type, emailAddrList ):
@@ -155,8 +157,7 @@ def ParseAddressStructure(addressStructure):
                 emails.append(emailAddr[2] +"@"+ emailAddr[3])
     return emails
     
-    
-    
+
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -235,7 +236,6 @@ def oauth2callback():
             #return "Authentication Tokens Saved Successfully"
         return "Some Problem happened"		
 		
-
 @app.route('/tokens')
 def tokens():
     for user in USERS:
@@ -355,7 +355,40 @@ def summary():
 
     return '<pre>'+stri+'</pre>'
     
-    
+
+@app.route('/createcsv', methods=["GET"])
+def createcsv():
+    fileLoc = './static/tailormadeEmailData.csv'
+    password = request.args.get('password','')
+
+    if (password == 'csv'):
+        allData = db.session.query(Email, EmailAddr).filter(Email.msgid==EmailAddr.msgid and Email.mailbox==EmailAddr.mailbox )#.all()
+        
+        outfile = open(fileLoc, 'wb')
+        outcsv = csv.writer(outfile)
+        records = allData.all()
+        
+        outcsv.writerow(['mailbox', 'msgid', 'threadid', \
+                'subject', 'date', \
+                'mailbox', 'msgid', 'type', \
+                'emailaddress'])
+        for curr in records:
+            outcsv.writerow([curr.Email.mailbox, 'x'+str(curr.Email.msgid), 'x'+str(curr.Email.threadid), \
+                curr.Email.subject, curr.Email.date, \
+                curr.EmailAddr.mailbox, 'x'+str(curr.EmailAddr.msgid), curr.EmailAddr.type, \
+                curr.EmailAddr.emailaddress])
+        
+        outfile.close()
+        
+        #response = make_response()
+        #response.headers['Cache-Control'] = 'no-cache'
+        #response.headers['Content-Type'] = 'text/csv'
+        #response.headers['X-Accel-Redirect'] = fileLoc
+        
+        return redirect(fileLoc) #response #'<pre>'+"DONE"+'</pre>'
+    else:
+        return "Not Authenticated"
+
 @app.route('/sql', methods=["GET"])
 def sql():
     mailbox_name = str(request.cookies.get('email'))
@@ -385,11 +418,15 @@ def imapPage():
     accesskey = request.cookies.get('ak')
     
     if email != "" and accesskey != "":
-                
-        server = IMAPClient('imap.gmail.com', use_uid=True, ssl=True)
-        
-        server.oauth2_login(email, accesskey)
-        
+        try:
+            server = IMAPClient('imap.gmail.com', use_uid=True, ssl=True)
+            server.oauth2_login(email, accesskey)
+        except Exception, e:
+            print "oauth2_login ERROR??"
+            print e.__doc__
+            print e.message
+            return "oauth2_login Error. Remove cookies and try again"
+            
         #GET FOLDERS
         folders = server.list_folders()
         stri="";
@@ -412,7 +449,7 @@ def imapPage():
                 #print select_info
                 
                 #messages = server.search(['SINCE 05-Feb-2014 NOT FROM \"facebook\"'])
-                messages = server.search(['SINCE 11-Feb-2014'])
+                messages = server.search(['SINCE 17-Feb-2014'])
         
                 #print "-"
                 #print messages
@@ -484,10 +521,6 @@ def imapPage():
         return redirect('https://docs.google.com/a/cornell.edu/forms/d/19fsDE10624ZDFsifJDoLI-IzkVObNoutXILwm91HA7A/viewform')
     return 'Error SW32 - check GET parameters'
     
-    
-        
-
-
 	
 @app.route('/hello/')
 @app.route('/hello/<name>')
