@@ -20,7 +20,7 @@ import datetime
 import sys
 import json
 import requests
-import oauth2
+#import oauth2
 import imaplib
 import email
 
@@ -248,9 +248,13 @@ def tokens():
 def makejson():
 
     mailbox_name = request.args.get('mailbox_name','')
-
-    if (mailbox_name==''):
-        return "error: no mailbox_name"
+    type = request.args.get('type','')
+    
+    if (type ==''):
+        type = 'to'
+    
+    if (mailbox_name=='' or (type != 'to' and type != 'from')):
+        return "error: no mailbox_name or no valid type"
     
     stri=""
     #### By hour of day (Received)
@@ -260,10 +264,10 @@ def makejson():
     #sentEmails = db.session.query(Email, EmailAddr).filter(Email.msgid==EmailAddr.msgid).\
     #                     filter(EmailAddr.type=='from').filter(EmailAddr.emailaddress==mailbox_name)
     
-    receivedEmails = db.session.query(Email, EmailAddr).filter(Email.msgid==EmailAddr.msgid).\
-                         filter(EmailAddr.type=='to').filter(EmailAddr.emailaddress==mailbox_name)
+    emails = db.session.query(Email, EmailAddr).filter(Email.msgid==EmailAddr.msgid).\
+                         filter(EmailAddr.type==type).filter(EmailAddr.emailaddress==mailbox_name)
     
-    for e, a in receivedEmails.all():
+    for e, a in emails.all():
         #print "e::"+ str(e.date)
         #print "a::"+str(a)
         #print e.date.day, '-', e.date.hour
